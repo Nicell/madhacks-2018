@@ -10,7 +10,6 @@ const search = () => {
         index.search({
             query: query
         }, (err, content) => {
-            console.log(content);
             for (const hit of content.hits) {
                 const ename = `<span>${hit._highlightResult.ename.value}</span>`;
                 let types = '';
@@ -18,7 +17,10 @@ const search = () => {
                     const cleanType = type.value.replace('<em>', '').replace('</em>', '');
                     types += `<span class="${cleanType.toLowerCase()}">${type.value}</span>`;
                 }
-                hits += `<div class="hit">${ename}<div class="types">${types}</div></div>`;
+                const imgNum = ("00" + hit.id).slice(-3);
+                const pkmName = hit.ename.charAt(0).toUpperCase() + hit.ename.slice(1);
+                const image = `<img src="/img/${imgNum}${pkmName}.png"/>`
+                hits += `<div class="hit">${image}${ename}<div class="types">${types}</div></div>`;
             }
             document.getElementById('hits').innerHTML = hits;
         });
