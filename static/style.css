@@ -4,6 +4,8 @@ body {
     width: 100%;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    height: 100vh;
 }
 
 #logo {
@@ -12,6 +14,7 @@ body {
     margin-bottom: 0px;
     padding-left: 25px;
     font-size: 24px;
+    flex-shrink: 0;
 }
 #logo > span {
     position: absolute;
@@ -25,16 +28,20 @@ main {
     flex-direction: column;
     width: 100%;
     max-width: 900px;
+    overflow: hidden;
 }
 
 .search {
     width: 100%;
     display: flex;
+    flex-shrink: 0;
+    z-index: 1;
 }
 
 .search > input {
     width: 100%;
     margin: 25px;
+    margin-bottom: 0px;
     padding: 15px 25px;
     font-size: 20px;
     border-radius: 4px;
@@ -53,10 +60,41 @@ main {
 #hits {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    flex-shrink: 1;
+    margin: 0px 25px;
 }
 
 #hits em {
     background-color: rgba(84, 104, 255, 0.3);
     font-style: normal;
     font-weight: 700;
+}
+
+.hit {
+    display: flex;
+    padding: 15px;
+    flex-shrink: 0;
+}
+
+.hit:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.types {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.types > span {
+    padding: 3px 6px;
+    background: rgba(84, 104, 255);
+    border-radius: 6px;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.types > span em {
+    background: rgba(0, 0, 0, 0.3) !important;
 }
