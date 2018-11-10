@@ -1,7 +1,8 @@
 <head>
     <title>Pokédex</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="/static/main.js"></script>
 </head>
 <body>
@@ -14,7 +15,10 @@
         </div>
 
         <div class="search">
-            <input placeholder="Search Pokémon" autofocus/>
+            <input id="query" placeholder="Search Pokémon" onkeyup="search()" autofocus/>
+        </div>
+        <div id="hits">
+
         </div>
     </main>
 </body>
