@@ -84,6 +84,8 @@ main {
     padding: 15px;
     flex-shrink: 0;
     align-items: center;
+    text-decoration: none;
+    color: #000000;
 }
 
 .hit:nth-child(odd) {
