@@ -7,6 +7,7 @@ const skills = JSON.parse(fs.readFileSync('../Pokemon-DB/skills.json', 'utf8'));
 const pokedexCombined = [];
 for (const pokemon of pokedex) {
     let newDef = {...pokemon};
+    newDef.idInt = parseInt(newDef.id);
     newDef.type = [];
     newDef.skills = {};
 
