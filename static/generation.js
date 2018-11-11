@@ -47,7 +47,7 @@ index.search({
             types += `<span class="${type}">${type}</span>`;
         }
         const imgNum = ("00" + hit.id).slice(-3);
-        const pkmName = hit.ename.charAt(0).toUpperCase() + hit.ename.slice(1);
+        const pkmName = (hit.ename.charAt(0).toUpperCase() + hit.ename.slice(1)).replace('é', 'e').replace('é', 'e').replace('♀', '').replace('♂', '').replace('\'', '').replace(' ', '_').replace('.', '');
         const image = `<img src="/img/${imgNum}${pkmName}.png"/>`
         hits += `<a href="/pokemon/${imgNum}" target="_blank" class="hit">${image}${ename}<div class="types">${types}</div></a>`;
     }

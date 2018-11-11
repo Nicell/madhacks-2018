@@ -7,7 +7,7 @@ index.search({
     query: id
 }, (err, content) => {
     const pokemon = content.hits[0];
-    const pkmName = pokemon.ename.charAt(0).toUpperCase() + pokemon.ename.slice(1);
+    const pkmName = (hit.ename.charAt(0).toUpperCase() + hit.ename.slice(1)).replace('é', 'e').replace('é', 'e').replace('♀', '').replace('♂', '').replace('\'', '').replace(' ', '_').replace('.', '');
 
     document.getElementById("favicon").setAttribute("href", `/spr/${id}${pkmName}.png`)
     let types = "";
