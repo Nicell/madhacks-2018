@@ -1,0 +1,44 @@
+#profile {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    border: solid 1px #e0e0e0;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-top: 4px;
+    position: relative;
+    top: -4px;
+    flex-shrink: 1;
+    margin: 30px 25px;
+
+}
+
+.identity {
+    display: flex;
+    padding: 25px;
+    
+}
+
+.identity > img {
+    height: 128px;
+}
+
+.identity > span {
+    display: flex;
+    margin-left: 15px;
+}
+
+.identity > .types {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-right: 15px;
+    margin-top: 5px ;
+}
+
+.identity > .types > span {
+    margin-bottom: 5px;
+}
