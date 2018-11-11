@@ -11,6 +11,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
 .header > select {
