@@ -8,15 +8,29 @@ body {
     height: 100vh;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header > select {
+    margin: 25px;
+    margin-bottom: 0px;
+    margin-right: 50px;
+    position: relative;
+    bottom: -25px;
+}
+
 #logo {
     position: relative;
     margin: 25px;
     margin-bottom: 0px;
     padding-left: 25px;
     font-size: 24px;
-    flex-shrink: 0;
+    flex-shrink: 1;
     text-decoration: none;
     color: #000000;
+    width: 100%;
 }
 #logo > span {
     position: absolute;

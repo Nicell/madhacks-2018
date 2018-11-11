@@ -27,3 +27,10 @@ const search = () => {
     }
     document.getElementById('hits').innerHTML = hits;
 };
+
+const gens = () => {
+    const generation = document.getElementById('gens').value;
+    console.log('test');
+
+    window.open(window.location.host + '/gen/' + generation);
+}
