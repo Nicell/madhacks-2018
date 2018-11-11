@@ -10,12 +10,23 @@
 
 <body>
     <main>
-        <a id="logo" href="../../">
-            Pokédex
-            <span>
-                powered by <img src='/static/algolia.png' />
-            </span>
-        </a>
+        <div class='header'>
+            <a id="logo" href="../../">
+                Pokédex
+                <span>
+                    powered by <img src='/static/algolia.png' />
+                </span>
+            </a>
+            <select id="gens" onchange="gens()">
+                <option disabled selected>View Generation</option>
+                <option value="1">Generation 1</option>
+                <option value="2">Generation 2</option>
+                <option value="3">Generation 3</option>
+                <option value="4">Generation 4</option>
+                <option value="5">Generation 5</option>
+                <option value="6">Generation 6</option>
+            </select>
+        </div>
         <div id="generation">
 
         </div>

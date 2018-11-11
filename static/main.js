@@ -30,7 +30,6 @@ const search = () => {
 
 const gens = () => {
     const generation = document.getElementById('gens').value;
-    console.log('test');
 
-    window.open(window.location.host + '/gen/' + generation);
+    window.location.href = 'http://' + window.location.host + '/gen/' + generation;
 }
