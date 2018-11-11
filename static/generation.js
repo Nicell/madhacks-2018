@@ -39,5 +39,17 @@ index.search({
     numericFilters: searchParameters[id],
     hitsPerPage: 200
 }, (err, content) => {
-    console.log(content.hits);
+    let hits = "";
+    for (const hit of content.hits) {
+        const ename = `<span>${hit._highlightResult.ename.value}</span>`;
+        let types = '';
+        for (const type of hit.type) {
+            types += `<span class="${type}">${type}</span>`;
+        }
+        const imgNum = ("00" + hit.id).slice(-3);
+        const pkmName = hit.ename.charAt(0).toUpperCase() + hit.ename.slice(1);
+        const image = `<img src="/img/${imgNum}${pkmName}.png"/>`
+        hits += `<a href="/pokemon/${imgNum}" target="_blank" class="hit">${image}${ename}<div class="types">${types}</div></a>`;
+    }
+    document.getElementById('generation').innerHTML = hits;
 });
