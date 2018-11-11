@@ -19,6 +19,8 @@ body {
     margin-right: 50px;
     position: relative;
     bottom: -25px;
+    z-index: 2;
+    height: 24px;
 }
 
 #logo {
