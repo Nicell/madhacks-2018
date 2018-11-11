@@ -15,6 +15,11 @@
 
 }
 
+body {
+    height: auto;
+    overflow: auto;
+}
+
 .identity {
     display: flex;
     padding: 25px;
@@ -102,15 +107,34 @@
     flex-direction: column;
 }
 
+.moves > div > span {
+    padding: 10px 25px;
+    font-size: 20px;
+    background: rgb(84, 104, 255);;
+    color: #ffffff;
+    border-radius: 4px 4px 0px 0px;
+    display: block;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    margin-bottom: 25px;
+}
+
+.moves > div:last-child table {
+    margin-bottom: 0px;
 }
 
 table th {
     text-align: left;
+}
+
+table > thead {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .moves > div > span {

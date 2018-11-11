@@ -25,9 +25,9 @@ index.search({
                 <tr>
                     <td>${skillDef.ename}</td>
                     ${skillCategory === 'tm' ? `<td>${skillDef.tm}</td>` : ''}
-                    <td>${skillDef.category}</td>
-                    <td>${skillDef.power}</td>
-                    <td>${skillDef.accuracy}</td>
+                    <td>${skillDef.category.charAt(0).toUpperCase() + skillDef.category.slice(1)}</td>
+                    <td>${skillDef.power ? skillDef.power : '-'}</td>
+                    <td>${skillDef.accuracy ? skillDef.accuracy : '-'}</td>
                     <td>${skillDef.pp}</td>
                 </tr>
             `
@@ -56,82 +56,87 @@ index.search({
             </div>
         </div>
         <div class="moves">
-            <div>
-                <span>TM</span>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>TM#</th>
-                            <th>Category</th>
-                            <th>Power</th>
-                            <th>Accuracy</th>
-                            <th>PP</th>
-                        </tr>
-                    </thead>
+            ${pokemon.skills.tm ? `
+                <div>
+                    <span>TM</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>TM#</th>
+                                <th>Category</th>
+                                <th>Power</th>
+                                <th>Accuracy</th>
+                                <th>PP</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        ${skills.tm}
-                    </tbody>
-                </table>
-            </div>
+                        <tbody>
+                            ${skills.tm}
+                        </tbody>
+                    </table>
+                </div>
+            ` : ''}
+            ${pokemon.skills.transfer ? `
+                <div>
+                    <span>Transfer</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Power</th>
+                                <th>Accuracy</th>
+                                <th>PP</th>
+                            </tr>
+                        </thead>
 
-            <div>
-                <span>Transfer</span>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Power</th>
-                            <th>Accuracy</th>
-                            <th>PP</th>
-                        </tr>
-                    </thead>
+                        <tbody>
+                            ${skills.transfer}
+                        </tbody>
+                    </table>
+                </div>
+            ` : ''}
+            ${pokemon.skills.level_up ? `
+                <div>
+                    <span>Level Up</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Power</th>
+                                <th>Accuracy</th>
+                                <th>PP</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        ${skills.transfer}
-                    </tbody>
-                </table>
-            </div>
+                        <tbody>
+                            ${skills.level_up}
+                        </tbody>
+                    </table>
+                </div>
+            ` : ''}
+            ${pokemon.skills.egg ? `
+                <div>
+                    <span>Egg</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Power</th>
+                                <th>Accuracy</th>
+                                <th>PP</th>
+                            </tr>
+                        </thead>
 
-            <div>
-                <span>Level Up</span>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Power</th>
-                            <th>Accuracy</th>
-                            <th>PP</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        ${skills.level_up}
-                    </tbody>
-                </table>
-            </div>
-
-            <div>
-                <span>Egg</span>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Power</th>
-                            <th>Accuracy</th>
-                            <th>PP</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        ${skills.egg}
-                    </tbody>
-                </table>
-            </div>
+                        <tbody>
+                            ${skills.egg}
+                        </tbody>
+                    </table>
+                </div>
+            ` : ''}
         </div>
     `;
 
