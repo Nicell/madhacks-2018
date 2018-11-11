@@ -15,6 +15,25 @@ index.search({
         types += `<span class="${type}">${type}</span>`;
     }
 
+    const skills = {}
+
+    for (const skillCategory of Object.keys(pokemon.skills)) {
+        skills[skillCategory] = '';
+
+        for (const skillDef of pokemon.skills[skillCategory]) {
+            skills[skillCategory] += `
+                <tr>
+                    <td>${skillDef.ename}</td>
+                    ${skillCategory === 'tm' ? `<td>${skillDef.tm}</td>` : ''}
+                    <td>${skillDef.category}</td>
+                    <td>${skillDef.power}</td>
+                    <td>${skillDef.accuracy}</td>
+                    <td>${skillDef.pp}</td>
+                </tr>
+            `
+        }
+    }
+
     const template = `
         <div class="identity"> 
             <img src="/img/${id}${pkmName}.png"/>
@@ -34,6 +53,84 @@ index.search({
             <div class="section">
                 <span>Speed: ${pokemon.base.Speed}</span>
                 <span>HP: ${pokemon.base.HP}</span>
+            </div>
+        </div>
+        <div class="moves">
+            <div>
+                <span>TM</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>TM#</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Accuracy</th>
+                            <th>PP</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        ${skills.tm}
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <span>Transfer</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Accuracy</th>
+                            <th>PP</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        ${skills.transfer}
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <span>Level Up</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Accuracy</th>
+                            <th>PP</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        ${skills.level_up}
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <span>Egg</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Accuracy</th>
+                            <th>PP</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        ${skills.egg}
+                    </tbody>
+                </table>
             </div>
         </div>
     `;

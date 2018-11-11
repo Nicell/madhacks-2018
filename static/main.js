@@ -20,7 +20,7 @@ const search = () => {
                 const imgNum = ("00" + hit.id).slice(-3);
                 const pkmName = hit.ename.charAt(0).toUpperCase() + hit.ename.slice(1);
                 const image = `<img src="/img/${imgNum}${pkmName}.png"/>`
-                hits += `<a href="/pokemon/${imgNum}" target="blank" class="hit">${image}${ename}<div class="types">${types}</div></a>`;
+                hits += `<a href="/pokemon/${imgNum}" target="_blank" class="hit">${image}${ename}<div class="types">${types}</div></a>`;
             }
             document.getElementById('hits').innerHTML = hits;
         });
