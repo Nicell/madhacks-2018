@@ -23,7 +23,18 @@ index.search({
         </div>
 
         <div class="stats">
-
+            <div class="section">
+                <span>Attack: ${pokemon.base.Attack}</span>
+                <span>Defense: ${pokemon.base.Defense}</span>
+            </div>
+            <div class="section">
+                <span>Sp. Attack: ${pokemon.base["Sp.Atk"]}</span>
+                <span>Sp. Defense: ${pokemon.base["Sp.Def"]}</span>
+            </div>
+            <div class="section">
+                <span>Speed: ${pokemon.base.Speed}</span>
+                <span>HP: ${pokemon.base.HP}</span>
+            </div>
         </div>
     `;
 
