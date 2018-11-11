@@ -25,7 +25,8 @@ const searchParameters = {
     ],
     6: [
         'idInt >= 650'
-    ]
+    ],
+    7: []
 }
 
 const gens = () => {
@@ -37,7 +38,7 @@ const gens = () => {
 index.search({
     query: '',
     numericFilters: searchParameters[id],
-    hitsPerPage: 200
+    hitsPerPage: 800
 }, (err, content) => {
     let hits = "";
     for (const hit of content.hits) {
